@@ -1,0 +1,94 @@
+@import '../../Styles/sass/mixins';
+@import '../../Styles/sass/variables';
+
+.SecurityCard {
+	@include flex(center, space-between, column);
+	width: auto;
+	margin-bottom: 4rem;
+	margin-right: 3rem;
+
+	&--Img {
+		width: 3rem;
+		opacity: 0.5;
+	}
+
+	&--Para {
+		font-weight: 200;
+		font-size: 1.8rem;
+		padding-top: 1rem;
+		color: $light;
+	}
+}
+
+@include media-xxl {
+	.SecurityCard {
+		margin: 0rem 4.5rem 4.5rem 4.5rem;
+		flex-basis: 180px;
+		text-align: center;
+
+		&--Img {
+			width: 2.8rem;
+		}
+
+		&--Para {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@include media-xl {
+	.SecurityCard {
+		&--Img {
+			width: 2.4rem;
+		}
+
+		&--Para {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@include media-l {
+	.SecurityCard {
+		&--Img {
+			width: 3rem;
+		}
+
+		&--Para {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+@include media-ml {
+	.SecurityCard {
+		&--Para {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+@include media-md {
+	.SecurityCard {
+		&--Img {
+			width: 3rem;
+		}
+		&--Para {
+			font-size: 2rem;
+		}
+	}
+}
+
+@include media-sl {
+	.SecurityCard {
+		margin: 5rem 0 0 0;
+		flex-basis: 160px;
+
+		&--Img {
+			width: 3rem;
+		}
+		&--Para {
+			font-size: 1.5rem;
+		}
+	}
+}

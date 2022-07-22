@@ -1,0 +1,270 @@
+@import '../../Styles/sass/mixins';
+@import '../../Styles/sass/variables';
+
+.Footer {
+	@include flex(center, space-between, column);
+	width: 100vw;
+
+	&--Logo {
+		height: 7vh;
+	}
+
+	&--Info {
+		@include flex(start, space-between, column);
+		width: 100%;
+		margin-bottom: 5vh;
+
+		&Row {
+			@include flex(start, start, row);
+			width: 80%;
+
+			&Icon {
+				height: 3vh;
+				margin: 0 1.5rem 1rem 0;
+			}
+		}
+	}
+
+	&--Form {
+		width: 90%;
+		@include flex(start, space-between, column);
+		padding-bottom: 2rem;
+
+		&Textarea {
+			width: 100%;
+			height: 20vh;
+			background-color: rgb(236, 236, 236);
+			padding: 0.4rem 1rem;
+			font-family: $secondary_font;
+			font-size: 1.6rem;
+			border: none;
+			border-radius: 0.5rem;
+			color: $placeholder;
+
+			&:focus {
+				outline: none;
+			}
+
+			&::placeholder {
+				font-family: $secondary_font;
+				font-size: 1.6rem;
+				color: $placeholder;
+				opacity: 0.5;
+			}
+		}
+
+		.Input {
+			padding: 0.8rem 1rem;
+		}
+	}
+
+	&--Title {
+		font-size: 1.9rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+	}
+
+	&--Para {
+		font-size: 1.4rem;
+		font-weight: 300;
+		line-height: 40px;
+	}
+
+	&--Desktop {
+		@include flex(start, space-between, row);
+		width: 100%;
+		padding: 10vh 10vw 5vh 10vw;
+
+		&Left {
+			@include flex(center, space-between, column);
+			width: 40%;
+		}
+
+		&Right {
+			@include flex(start, space-between, column);
+			width: 40%;
+		}
+	}
+
+	&--Row {
+		@include flex(start, start, column);
+		width: 100%;
+		padding: 0 10vw;
+	}
+
+	&--Social {
+		width: 100%;
+		padding: 0 10vw;
+		margin-top: 3rem;
+		@include flex(center, space-between, column);
+
+		&Row {
+			@include flex(center, space-between, row);
+			margin-bottom: 0.5rem;
+
+			&Icons {
+				@include flex(center, space-between, row);
+				margin-left: 2rem;
+
+				&Img {
+					height: 4vh;
+					margin-bottom: 1rem;
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-xxl {
+	.Footer {
+		&--Form {
+			&Textarea {
+				font-size: 1.4rem;
+
+				&::placeholder {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-xl {
+	.Footer {
+		&--Title {
+			font-size: 1.8rem;
+		}
+
+		&--Para {
+			font-size: 1.25rem;
+			line-height: 35px;
+		}
+
+		&--Form {
+			&Textarea {
+				font-size: 1.3rem;
+
+				&::placeholder {
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
+}
+
+
+@include media-l {
+	.Footer {
+		&--Title {
+			font-size: 1.7rem;
+		}
+
+		&--Para {
+			font-size: 1.15rem;
+			line-height: 30px;
+		}
+
+		&--Form {
+			&Textarea {
+				font-size: 1rem;
+
+				&::placeholder {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-md {
+	.Footer {
+		&--Title {
+			font-size: 1.8rem;
+		}
+
+		&--Para {
+			font-size: 1.2rem;
+			font-weight: 400;
+			margin-bottom: 0.7rem;
+		}
+
+		&--Form {
+			.Input {
+				padding: 0.7rem 1rem;
+			}
+			&Textarea {
+				&::placeholder {
+					font-size: 1.45rem;
+				}
+			}
+		}
+
+		&--Info {
+			&Row {
+				width: 80%;
+			}
+		}
+
+		&--Desktop {
+			padding: 6vh 10vw 5vh 10vw;
+		}
+
+		&--Social {
+			&Row {
+				&Icons {
+					&Img {
+						height: 3vh;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-sl {
+	.Footer {
+		padding-top: 2rem !important;
+		
+		&--Para {
+			line-height: 20px;
+		}
+
+		&--Desktop {
+			padding: 6vh 10vw 0 10vw;
+		}
+
+		&--Info {
+			&Row {
+				width: 60%;
+				padding-top: 1rem;
+			}
+		}
+
+		&--Form {
+			&Textarea {
+				font-size: 1.2rem;
+
+				&::placeholder {
+					font-size: 1.2rem;
+				}
+			}
+		}
+
+		&--Row {
+			align-items: center;
+		}
+
+		&--Social{
+			margin-top: 0;
+			margin-bottom: 3rem;
+			&Row {
+				align-items: center;
+
+				&Icons {
+					margin-left: 1rem;
+				}
+			}
+		}
+	}
+}

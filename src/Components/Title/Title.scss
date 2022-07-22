@@ -1,0 +1,76 @@
+@import '../../Styles/sass/mixins';
+@import '../../Styles/sass/variables';
+@import '../../Styles/sass/animations';
+
+.Title {
+    font-size: 6.2rem;
+    font-weight: 600;
+    line-height: 150px;
+
+    &--Span {
+        color: $orange;
+    }
+
+    &--Center {
+        text-align: center;
+    }
+
+    &--Animated {
+        @include animate(1s, ease-out, 0s, 1, normal, forwards, running, textfadein);
+    }
+}
+
+@include media-xxl {
+    .Title {
+            font-size: 5rem;
+            line-height: 100px;
+    }
+}
+
+@include media-xl {
+    .Title {
+        font-size: 4.4rem;
+        line-height: 80px;
+    }
+}
+
+@include media-l {
+    .Title {
+        font-size: 3.85rem;
+        line-height: 65px;
+    }
+}
+
+@include media-ml {
+    .Title {
+        font-size: 5rem;
+        line-height: 75px;
+    }
+}
+
+@include media-md {
+    .Title {
+        font-size: 4.5rem;
+        line-height: 62px;
+    }
+}
+
+@include media-sl {
+    .Title {
+        font-size: 4rem;
+        line-height: 50px;
+    }
+}
+
+@include media-sm {
+    .Title {
+        font-size: 3.6rem;
+    }
+}
+
+@include media-xss {
+    .Title {
+        font-size: 3rem;
+        line-height: 40px;
+    }
+}

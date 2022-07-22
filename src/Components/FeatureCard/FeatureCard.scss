@@ -1,0 +1,61 @@
+@import '../../Styles/sass/mixins';
+@import '../../Styles/sass/variables';
+@import '../../Styles/sass/animations';
+
+.FeatureCard {
+    @include flex(center, space-between, column);
+    width: 35%;
+    height: 65vh;
+    border-radius: 20px;
+    box-shadow: 5px 5px 16px #0000003B;
+    margin-bottom: 10vh;
+    padding: 2rem 3rem;
+    // position: sticky;
+    // position: -webkit-sticky;
+    // top: 26vh;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+@include media-xxl {
+    .FeatureCard {}
+}
+
+@include media-xl {
+    .FeatureCard {}
+}
+
+@include media-l {
+    .FeatureCard {}
+}
+
+@include media-ml {
+    .FeatureCard {
+        height: 50vh;
+        width: 55%;
+        top: 27vh;
+    }
+}
+
+@include media-md {
+    .FeatureCard {
+        height: 60vh;
+        width: 70%;
+        top: 34vh;
+    }
+}
+
+@include media-sl {
+    .FeatureCard {
+        width: 90%;
+        top: 32vh;
+        height: 55vh;
+    }
+}
+
+@include media-sm {
+    .FeatureCard {
+        top: 30vh;
+        height: 60vh;
+    }
+}
