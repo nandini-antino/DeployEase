@@ -2,11 +2,19 @@ import React from 'react';
 
 import './Landing.scss';
 import { Pathname } from '../../../Pathname';
+import MetaComponent from '../../../utils/MetaComponent';
 
 const Landing = () => {
 
 	return (
 		<div className="Landing">
+			<MetaComponent
+				title='Hi, This is dummy page title'
+				description='This is the dummy page description'
+				keywords='dummy, keywords, dummy keywords, frontend template, frontend template by antino'
+				location={window.location}
+				image='og_image.png'
+			/>
 			<div className="Landing--Home" id="home">
 				<div className="Landing--HomeAnimation">
 					<video
