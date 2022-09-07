@@ -36,21 +36,14 @@
 src
 ├── Assets
 │   ├── Animations
-│   ├── BrandIcons
-│   ├── NavbarIcons
 │   ├── SEO
 │   └── Videos
 ├── Components
 │   ├── Button
-│   ├── FeatureCard
-│   ├── Footer
 │   ├── HrLine
 │   ├── Input
-│   ├── Navbar
-│   ├── Otp
-│   ├── ProfileCard
-│   ├── SecurityCard
-│   └── Title
+│   └── Otp
+├── Layouts
 ├── Redux
 ├── Styles
 │   ├── css
