@@ -1,12 +1,13 @@
-import config from './env';
-let BASE_URL = config.api.baseUrl;
+import config from "./env";
+
+const BASE_URL = config.api.baseUrl;
 
 export var Server = {
 	get: async function (url, isAuth, customOptions, customHeader) {
 		var requestOptions = {
-			method: 'GET',
+			method: "GET",
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8',
+				"Content-Type": "application/json;charset=utf-8",
 				...customHeader,
 			},
 		};
@@ -14,22 +15,22 @@ export var Server = {
 			requestOptions = { ...requestOptions, ...customOptions };
 
 		if (isAuth) {
-			let token = localStorage.getItem('t_id');
-			console.log(token)
-			requestOptions.headers['Authorization'] = `Bearer ${token}`;
-			requestOptions.headers['x-auth-token'] = `Bearer ${token}`;
-			console.log('yesnext')
+			let token = localStorage.getItem("t_id");
+			console.log(token);
+			requestOptions.headers["Authorization"] = `Bearer ${token}`;
+			requestOptions.headers["x-auth-token"] = `Bearer ${token}`;
+			console.log("yesnext");
 		}
 		const a = await fetch(BASE_URL + url, requestOptions);
-		console.log(a)
+		console.log(a);
 		return await a.json();
 	},
 
 	getWithToken: async function (url, token, customOptions, customHeader) {
 		var requestOptions = {
-			method: 'GET',
+			method: "GET",
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8',
+				"Content-Type": "application/json;charset=utf-8",
 				...customHeader,
 			},
 		};
@@ -45,9 +46,9 @@ export var Server = {
 
 	post: async function (url, payload, isAuth, customOptions, customHeader) {
 		var requestOptions = {
-			method: 'POST',
+			method: "POST",
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8',
+				"Content-Type": "application/json;charset=utf-8",
 				...customHeader,
 			},
 			body: JSON.stringify(payload),
@@ -55,9 +56,9 @@ export var Server = {
 		if (customOptions)
 			requestOptions = { ...requestOptions, ...customOptions };
 		if (isAuth) {
-			let token = localStorage.getItem('t_id');
-			requestOptions.headers['Authorization'] = `Bearer ${atob(token)}`;
-			requestOptions.headers['x-auth-token'] = `Bearer ${atob(token)}`;
+			let token = localStorage.getItem("t_id");
+			requestOptions.headers["Authorization"] = `Bearer ${atob(token)}`;
+			requestOptions.headers["x-auth-token"] = `Bearer ${atob(token)}`;
 		}
 
 		const a = await fetch(BASE_URL + url, requestOptions);
@@ -66,7 +67,7 @@ export var Server = {
 		try {
 			jsonResponse = await a.json();
 		} catch (e) {
-			console.log('unable to parse as json', e);
+			console.log("unable to parse as json", e);
 		}
 		return jsonResponse;
 		// } else {
@@ -84,9 +85,9 @@ export var Server = {
 		customHeader
 	) {
 		var requestOptions = {
-			method: 'PUT',
+			method: "PUT",
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8',
+				"Content-Type": "application/json;charset=utf-8",
 				...customHeader,
 			},
 			body: JSON.stringify(payload),
@@ -94,18 +95,18 @@ export var Server = {
 		if (customOptions)
 			requestOptions = { ...requestOptions, ...customOptions };
 		if (isAuth) {
-			let token = localStorage.getItem('t_id');
-			requestOptions.headers['Authorization'] = `Bearer ${atob(token)}`;
-			requestOptions.headers['x-auth-token'] = `Bearer ${atob(token)}`;
+			let token = localStorage.getItem("t_id");
+			requestOptions.headers["Authorization"] = `Bearer ${atob(token)}`;
+			requestOptions.headers["x-auth-token"] = `Bearer ${atob(token)}`;
 		}
 
-		const a = await fetch(BASE_URL + url + '/' + id, requestOptions);
+		const a = await fetch(BASE_URL + url + "/" + id, requestOptions);
 		// if (a.status === 200) {
 		let jsonResponse = {};
 		try {
 			jsonResponse = await a.json();
 		} catch (e) {
-			console.log('unable to parse as json', e);
+			console.log("unable to parse as json", e);
 		}
 		return jsonResponse;
 		// } else {
@@ -115,13 +116,13 @@ export var Server = {
 	},
 
 	redirectPost: (url, data) => {
-		var form = document.createElement('form');
+		var form = document.createElement("form");
 		document.body.appendChild(form);
-		form.method = 'post';
+		form.method = "post";
 		form.action = url;
 		for (var name in data) {
-			var input = document.createElement('input');
-			input.type = 'hidden';
+			var input = document.createElement("input");
+			input.type = "hidden";
 			input.name = name;
 			input.value = data[name];
 			form.appendChild(input);

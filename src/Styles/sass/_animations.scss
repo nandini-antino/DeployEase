@@ -30,27 +30,6 @@
     }
 }
 
-@keyframes swipemovedown {
-    100% {
-        transform: rotate(-35deg) translate(5vw, 10vh);
-    }
-}
-
-@keyframes swipereversemovedown {
-    0% {
-        transform: rotate(-35deg) translate(5vw, 10vh);
-    }
-    100% {
-        transform: rotate(-35deg) translate(5vw, 5vh);
-    }
-}
-
-@keyframes tabletmoveup {
-    100% {
-        transform: rotate(-35deg) translate(8vw, 7vh);
-    }
-}
-
 @keyframes tabletreversemoveup {
     0% {
         transform: rotate(-35deg) translate(8vw, 7vh);
@@ -68,78 +47,6 @@
     100% {
         transform: translateY(0);
         opacity: 1;
-    }
-}
-
-@keyframes borderround {
-    20% {
-        border-radius: 0.6rem;
-    }
-    40% {
-        border-radius: 1.2rem;
-    }
-    60% {
-        border-radius: 1.8rem;
-    }
-    80% {
-        border-radius: 2.4rem;
-    }
-    100% {
-        border-radius: 3rem;
-    }
-}
-
-@keyframes borderflat {
-    0% {
-        border-radius: 0;
-    }
-    20% {
-        border-radius: 0.6rem;
-    }
-    40% {
-        border-radius: 1.2rem;
-    }
-    60% {
-        border-radius: 1.8rem;
-    }
-    80% {
-        border-radius: 2.4rem;
-    }
-}
-
-@keyframes videoshrink {
-    20% {
-        transform: scale(0.96);
-    }
-    40% {
-        transform: scale(0.92);
-    }
-    60% {
-        transform: scale(0.88);
-    }
-    80% {
-        transform: scale(0.84);
-    }
-    100% {
-        transform: scale(0.80);
-    }
-}
-
-@keyframes videoexpand {
-    0% {
-        transform: scale(0.80);
-    }
-    20% {
-        transform: scale(0.84);
-    }
-    40% {
-        transform: scale(0.88);
-    }
-    60% {
-        transform: scale(0.92);
-    }
-    80% {
-        transform: scale(0.96);
     }
 }
 
