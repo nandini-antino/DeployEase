@@ -2,7 +2,7 @@ import React from 'react';
 import { Circles } from 'react-loader-spinner';
 import PropTypes from "prop-types";
 
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './Button.scss';
 
 const Button = (props) => {
