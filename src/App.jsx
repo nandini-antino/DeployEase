@@ -16,8 +16,6 @@ const Components = React.lazy(() => import('./Views/beforeAuth/Components'));
 const NotFound = React.lazy(() => import('./Views/404'));
 
 
-
-
 export function App() {
 	return (
 		<Suspense fallback={<Loader />}>
@@ -25,7 +23,7 @@ export function App() {
 				<Routes>
 					<Route
 						path={Pathname.LOGIN}
-						element={<Login/>}
+						element={<Login />}
 					/>
 					<Route
 						index
@@ -39,7 +37,7 @@ export function App() {
 					</Route>
 					<Route
 						path={Pathname.COMPONENTS}
-						element={<Components/>}
+						element={<Components />}
 					/>
 					<Route path="*" component={NotFound} />
 				</Routes>

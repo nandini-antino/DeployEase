@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 // const BundleAnalyzerPlugin =
 // 	require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const dotenv = require('dotenv');
+
+// this will update the process.env with environment variables in .env file
+dotenv.config();
 
 const config = {
 	entry: ['react-hot-loader/patch', './src/index.js'],
@@ -74,6 +78,9 @@ const config = {
 				{ from: './src/Assets/SEO/og_image.png', to: 'og_image.png' },
 			],
 		}),
+		new webpack.DefinePlugin({
+			'process.env': JSON.stringify(process.env)
+		})
 	],
 	devtool: 'cheap-module-source-map',
 	optimization: {
