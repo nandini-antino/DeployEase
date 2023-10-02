@@ -17,6 +17,19 @@ export const Login = () => {
   };
 
   const handleSignIn = () => {
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Basic password validation
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters.");
+      return;
+    }
+
     // Implement your sign-in logic here using 'email' and 'password'
     // For example, you can make an API request to authenticate the user.
     // Ensure that both email and password are provided
