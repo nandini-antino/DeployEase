@@ -1,50 +1,28 @@
-import React from 'react';
-
-import './Landing.scss';
-import { Pathname } from '../../../Pathname';
-import MetaComponent from '../../../utils/MetaComponent';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
 
-	return (
-		<div className="Landing">
-			<MetaComponent
-				title='Hi, This is dummy page title'
-				description='This is the dummy page description'
-				keywords='dummy, keywords, dummy keywords, frontend template, frontend template by antino'
-				location={window.location}
-				image='og_image.png'
-			/>
-			<div className="Landing--Home" id="home">
-				<div className="Landing--HomeAnimation">
-					<video
-						className="Landing--HomeAnimationVideo"
-						autoPlay={true}
-						muted
-						loop={true}
-						playsInline
-					>
-						<source
-							src="https://ak.picdn.net/shutterstock/videos/1063309405/preview/stock-footage-modern-office-portrait-of-beautiful-authentic-specialist-with-short-pink-hair-standing-holding.webm"
-							type="video/mp4"
-						/>
-					</video>
-				</div>
-				<div className="Landing--HomeContent">
-					<div className="Landing--HomeContentTop">
-						<h1 className="Landing--SubTitle">
-							Introducing Dummy
-							<span style={{ fontWeight: '700' }}>Land,</span>
-						</h1>
-						<h1 className="Landing--Para">
-							This is the hero section.
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta fugiat perspiciatis temporibus ut impedit expedita maiores officiis porro? At commodi suscipit atque eligendi cumque? Impedit magnam eligendi fugiat. Non, quam.
-						</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
-}
+  const handleGetStartedClick = () => {
+    navigate("/login");
+  };
+
+  return (
+    <div className="Landing">
+      <div className="Landing--Home" id="home">
+        <div className="Landing--HomeContent">
+          <div className="Landing--HomeContentTop">
+            <div>
+              <button className="button" onClick={handleGetStartedClick}>
+                Get started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Landing;

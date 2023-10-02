@@ -1,0 +1,99 @@
+/* Sidebar.scss */
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #333; /* Background color for the sidebar */
+  color: #fff; /* Text color for the sidebar */
+  transition: width 0.3s ease;
+  min-height: 100vh;
+  width: 50px;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.top_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 18px;
+  margin: 0;
+  display: block;
+}
+
+.bars {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover {
+  background-color: #555; /* Background color on hover */
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.link_text {
+  display: none;
+  margin-left: 10px;
+}
+
+.active {
+  background-color: #555; /* Background color for the active link */
+}
+
+.main {
+  margin-left: 50px;
+  padding: 20px;
+  width: calc(100% - 50px);
+  transition: margin-left 0.3s ease;
+}
+
+.active .link_text {
+  display: block;
+}
+
+/* Media query for small screens to toggle sidebar visibility */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 50px;
+  }
+
+  .main {
+    margin-left: 50px;
+  }
+
+  .active .link_text {
+    display: none;
+  }
+
+  .top_section {
+    padding: 10px 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .bars {
+    margin-left: 10px;
+  }
+}

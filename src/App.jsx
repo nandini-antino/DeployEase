@@ -1,49 +1,45 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import CreateProject from "./Pages/CreateProject";
+import About from "./Pages/About";
+import Analytics from "./Pages/Analytics";
+import { Pathname } from "./Pathname";
+import ProductList from "./Pages/ProductList";
+import SideBar from "./Components/SideBar";
+import Comment from "./Pages/Comment";
+import Product from "./Pages/Product";
+import Login from "./Views/beforeAuth/Login/Login";
+import Landing from "./Views/beforeAuth/Landing/Landing";
 
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path={Pathname.LOGIN} element={<Login />} />
+        <Route path={Pathname.LANDING_PAGE} element={<Landing />} />
+        <Route path="/*" element={<MainApp />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-import PrivateOutlet from './PrivateRoute';
-import Loader from './Components/Loader';
-import { Pathname } from './Pathname';
-import Landing from './Views/beforeAuth/Landing/Landing';
-import Login from './Views/beforeAuth/Login/index';
-
-import './app.scss';
-
-const Dashboard = React.lazy(() => import('./Views/afterAuth/Dashboard/Dashboard'));
-const Orders = React.lazy(() => import('./Views/afterAuth/Orders/Orders'));
-const Components = React.lazy(() => import('./Views/beforeAuth/Components'));
-const NotFound = React.lazy(() => import('./Views/404'));
-
-
-export function App() {
-	return (
-		<Suspense fallback={<Loader />}>
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path={Pathname.LOGIN}
-						element={<Login />}
-					/>
-					<Route
-						index
-						path={Pathname.LANDING_PAGE}
-						element={<Landing />}
-					/>
-					<Route path={Pathname.DASHBOARD} element={<PrivateOutlet />}>
-						<Route index element={<Dashboard />} />
-						<Route path='orders' element={<Orders />} />
-						<Route path="*" element={<NotFound />} />
-					</Route>
-					<Route
-						path={Pathname.COMPONENTS}
-						element={<Components />}
-					/>
-					<Route path="*" component={NotFound} />
-				</Routes>
-			</BrowserRouter>
-		</Suspense>
-	);
-}
+const MainApp = () => {
+  return (
+    <SideBar>
+      <Routes>
+        <Route
+          path={Pathname.CreateProject}
+          index
+          element={<CreateProject />}
+        />
+        <Route path={Pathname.ABOUT} element={<About />} />
+        <Route path={Pathname.COMMENT} element={<Comment />} />
+        <Route path={Pathname.ANALYTICS} element={<Analytics />} />
+        <Route path={Pathname.PRODUCT} element={<Product />} />
+        <Route path={Pathname.PRODUCT_LIST} element={<ProductList />} />
+      </Routes>
+    </SideBar>
+  );
+};
 
 export default App;
