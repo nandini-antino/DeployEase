@@ -10,6 +10,7 @@ import Comment from "./Pages/Comment";
 import Product from "./Pages/Product";
 import Login from "./Views/beforeAuth/Login/Login";
 import Landing from "./Views/beforeAuth/Landing/Landing";
+import DashBoard from "./Pages/DashBoard";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const MainApp = () => {
   return (
     <SideBar>
       <Routes>
+        <Route path={Pathname.DASHBOARD} element={<DashBoard />} />
         <Route
           path={Pathname.CreateProject}
           index
